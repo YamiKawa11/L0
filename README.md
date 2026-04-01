@@ -1,7 +1,38 @@
-# Tauri + React + Typescript
+# L0 — Minimalist Text Logger & Session Saver 🚀
+**L0** (Level 0) — это легковесное и стильное десктопное приложение для автоматического сохранения всего, что вы вводите. Идеально подходит для тех, кто пишет длинные промпты нейросетям и боится потерять текст из-за сбоев соединения или случайного закрытия окна.
+---
+## ✨ Ключевые возможности
+- **Global Key Hook**: Записывает ввод в фоновом режиме, даже если окно приложения скрыто.
+- **Интеллектуальные сессии**: Автоматически разделяет текст на сессии по таймауту бездействия (20 сек по умолчанию).
+- **Clipboard Capture**: При нажатии `Ctrl+V` содержимое буфера обмена автоматически вставляется в текущую позицию курсора сессии.
+- **Умный фильтр**: Автоматически очищает лог от нечитаемых системных символов и "мусора".
+- **Ультра-минималистичный UI**: Ничего лишнего — только список сессий и текст. Безрамочный дизайн (frameless) с кастомным управлением.
+- **Tray & Background Mode**: При нажатии на `X` приложение сворачивается в системный лоток и продолжает работу.
+- **Autostart**: Легко добавляется в автозагрузку системы через настройки.
+---
+## 🛠 Технологический стек
+- **Core**: [Tauri 2.0](https://tauri.app/) (Rust + Frontend)
+- **Backend**: Rust (`rdev` для хуков, `rusqlite` для БД)
+- **Frontend**: React + TypeScript + Vite
+- **Database**: SQLite (локальное хранение данных в AppData)
+- **Design**: Vanilla CSS (VS Code inspired, Matte Blue selections)
+---
+## 🚀 Как запустить (Development)
+1. Установите зависимости:
+   ```bash
+   npm install
+Запустите в режиме разработки:
+bash
+npm run tauri dev
+📦 Сборка (Build)
+Для создания оптимизированного установщика для Windows:
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+bash
+npm run tauri build
+Готовый файл .exe появится в папке src-tauri/target/release/bundle/.
 
-## Recommended IDE Setup
+🔒 Конфиденциальность
+Все данные хранятся исключительно локально на вашем компьютере в базе данных SQLite. Приложение не имеет доступа к интернету и не отправляет ваши нажатия клавиш на внешние сервера.
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+Авторские права
+Создано в рамках проекта модернизации рабочего процесса с нейросетями.
